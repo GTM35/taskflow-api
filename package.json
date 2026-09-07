@@ -2,9 +2,9 @@
   "name": "taskflow-api",
   "version": "1.0.0",
   "description": "API REST em Node.js para gestão de tarefas e projetos, desenvolvida com foco em consolidar os fundamentos de Node.js, roteamento manual, persistência em JSON e organização por camadas.",
-  "main": "src/server.js",
+  "main": "./src/server.js",
   "scripts": {
-    "dev": "node --watch src/server.js"
+    "dev": "node --watch ./src/server.js"
   },
   "repository": {
     "type": "git",
@@ -13,7 +13,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "bugs": {
     "url": "https://github.com/GTM35/taskflow-api/issues"
   },
