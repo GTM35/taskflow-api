@@ -1,3 +1,3 @@
-export function create(request, response) {
+export function create({ request, response, dbTasks }) {
   response.end("Tasks criado!");
 }

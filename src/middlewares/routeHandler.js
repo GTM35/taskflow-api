@@ -1,8 +1,10 @@
 import { routes } from "../routes/index.js";
-import { Database } from "../database/dbProjects.js";
+import { DatabaseProjects } from "../database/dbProjects.js";
+import { DatabaseTasks } from "../database/dbTasks.js";
 import { extractQueryParams } from "../utils/extractQueryParams.js";
 
-const database = new Database();
+const dbProjects = new DatabaseProjects();
+const dbTasks = new DatabaseTasks();
 
 export function RouteHandler(request, response) {
   const route = routes.find((route) => {
@@ -17,7 +19,7 @@ export function RouteHandler(request, response) {
     request.params = params;
     request.query = query ? extractQueryParams(query) : {};
 
-    return route.controller(request, response, database);
+    return route.controller({ request, response, dbProjects, dbTasks });
   }
 
   return response.writeHead(404).end();

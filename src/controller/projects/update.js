@@ -1,9 +1,9 @@
-export function update(request, response, database) {
+export function update({ request, response, dbProjects }) {
   const { id } = request.params;
 
   const { name, description, owner } = request.body;
 
-  database.update("projects", id, {
+  dbProjects.update("projects", id, {
     name,
     description,
     owner,

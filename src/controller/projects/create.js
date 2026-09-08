@@ -1,6 +1,6 @@
 import { randomInt } from "node:crypto";
 
-export function create(request, response, database) {
+export function create({ request, response, dbProjects }) {
   const { name, description, owner } = request.body;
 
   const project = {
@@ -11,7 +11,7 @@ export function create(request, response, database) {
     create,
   };
 
-  database.insert("projects", project);
+  dbProjects.insert("projects", project);
 
   return response.writeHead(201).end();
 }

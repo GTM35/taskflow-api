@@ -2,7 +2,7 @@ import fs from "node:fs/promises";
 
 const DATABASE_PATH = new URL("dbProjects.json", import.meta.url);
 
-export class Database {
+export class DatabaseProjects {
   #database = {};
 
   constructor() {

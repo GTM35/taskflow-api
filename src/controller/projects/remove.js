@@ -1,7 +1,7 @@
-export function remove(request, response, database) {
+export function remove({ request, response, dbProjects }) {
   const { id } = request.params;
 
-  database.delete("projects", id);
+  dbProjects.delete("projects", id);
 
   response.end();
 }
