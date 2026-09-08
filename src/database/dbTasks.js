@@ -69,4 +69,28 @@ export class DatabaseTasks {
 
     this.#persist();
   }
+
+  updateStatus(table, id, status) {
+    const taskIndex = this.#database[table].findIndex(
+      (task) => task.id_task === id,
+    );
+
+    if (taskIndex > -1) {
+      this.#database[table][taskIndex].status = status;
+    }
+
+    this.#persist();
+  }
+
+  remove(table, id) {
+    const taskIndex = this.#database[table].findIndex(
+      (task) => task.id_task === id,
+    );
+
+    if (taskIndex > -1) {
+      this.#database[table].splice(taskIndex, 1);
+    }
+
+    this.#persist();
+  }
 }

@@ -4,5 +4,5 @@ export function update({ request, response, dbTasks }) {
 
   dbTasks.update("tasks", parseInt(id), data);
 
-  response.end("Chegou aqui!");
+  response.end();
 }
